@@ -1,0 +1,12 @@
+.product-card{
+    width: 18rem;
+}
+.product-img{
+    height: 12rem;
+}
+.none-link{
+    text-decoration: none;
+}
+.none-link:hover{
+    text-decoration: underline;
+}

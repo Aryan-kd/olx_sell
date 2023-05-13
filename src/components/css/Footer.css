@@ -1,0 +1,35 @@
+#links-footer{
+    display: flex;
+    margin-left: 0%;
+    background-color:#ebeeef;
+    border-top: 1px solid rgb(46, 42, 42);
+}
+#links-footer > ul{
+    margin-left: 4%;
+    list-style: none;
+    margin-top:2%;
+}
+#links-footer > ul > li{
+    color:rgb(70, 76, 80);
+}
+#links-footer > ul > li:hover{
+   color:rgb(0, 47, 82);
+}
+.Link{
+    color:rgb(70, 76, 80);
+}
+
+.Link:hover{
+    color:rgb(0, 47, 82);
+}
+
+@media all and (max-width:1000px)
+{
+    #links-footer{
+        display:block;
+    }
+    #foot1{
+        display: none;
+    }
+ 
+}
