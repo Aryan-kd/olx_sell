@@ -23,7 +23,7 @@ const FirebaseContext = createContext(null);
 export const useFirebase = () => useContext(FirebaseContext);
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCw4iwkP0A_kxHCGlnCCVztVD3wHLnvOE8',
+  apiKey: process.env.REACT_APP_FIREBASE_apiKey, //Change with your api key
   authDomain: 'olx-sell.firebaseapp.com',
   projectId: 'olx-sell',
   storageBucket: 'olx-sell.appspot.com',
@@ -36,9 +36,9 @@ const firebaseAuth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
 const storage = getStorage(firebaseApp);
-
 export const FirebaseProvider = (props) => {
   const [user, setUser] = useState(null);
+  console.log(user);
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
@@ -68,7 +68,8 @@ export const FirebaseProvider = (props) => {
     pincode,
     phone,
     desc,
-    image
+    image,
+    type
   ) => {
     const imageRef = ref(storage, `uploads/images/${Date.now()}-${image.name}`);
     const uploadResult = await uploadBytes(imageRef, image);
@@ -81,6 +82,8 @@ export const FirebaseProvider = (props) => {
       pincode,
       price,
       user: user.uid,
+      userName: user.displayName,
+      type,
     });
   };
 
@@ -102,6 +105,7 @@ export const FirebaseProvider = (props) => {
 
   const loggedOut = () => {
     signOut(firebaseAuth);
+    window.location.reload();
   };
 
   return (

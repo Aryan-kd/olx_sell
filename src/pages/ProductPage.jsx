@@ -20,7 +20,7 @@ const ProductPage = () => {
 
   let upldate = new Date(product?.date).toString();
 
-  if (product === null) return <h1>Loading....</h1>;
+  if (product === null) return <h1>Loading-----</h1>;
 
   return (
     <div className='container-fluid'>
@@ -43,7 +43,7 @@ const ProductPage = () => {
             <li className='list-group-item'>
               <div className='card-body'>
                 <h3 className='card-title'>Owner Details</h3>
-                <h5 className='card-title'>{product.user}</h5>
+                <h5 className='card-title'>{product.userName}</h5>
                 <Link
                   to={`tel:${product.phone}`}
                   className='card-text none-link'

@@ -89,9 +89,9 @@ const Login = () => {
         </Button>
       </div>
       <h4 className='my-5 text-center'>
-        <h6>
+        <p>
           don't have a account <Link to={'/register'}>register</Link>{' '}
-        </h6>
+        </p>
       </h4>
     </div>
   );
