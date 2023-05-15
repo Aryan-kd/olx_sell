@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import {
-  Register,
   Login,
   HomePage,
   ProductPage,
@@ -23,7 +22,6 @@ const App = () => {
         <Route exact path={'/user/profile'} element={<ProfilePage />} />
         <Route exact path={'/sell'} element={<ProductUpload />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
       </Routes>
       <Footer />
     </div>

@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook } from 'react-icons/fa';
-import { AiFillTwitterCircle } from 'react-icons/ai';
-import { AiFillYoutube } from 'react-icons/ai';
-import { ImLinkedin } from 'react-icons/im';
+import { AiFillGithub, AiFillYoutube } from 'react-icons/ai';
 import './css/Footer.css';
 import { phoneApp } from '../assets';
 
 const Footer = () => {
   return (
-    <div style={{ position: 'relative', bottom: '0px', width: '100%' }}>
+    <div
+      className='container-fluid'
+      style={{ position: 'relative', bottom: '0px', width: '100%' }}
+    >
       <div id='foot1' style={{ backgroundColor: '#ebeeef', width: '100%' }}>
         <div style={{ display: 'flex' }}>
           <img style={{ marginLeft: '10%' }} src={phoneApp} alt='OLX Footer' />
@@ -19,26 +20,11 @@ const Footer = () => {
               Buy, sell and find just about anything using our website.
             </h5>
           </div>
-          {/* <div>
-            <p
-              style={{
-                fontWeight: 'bold',
-                color: '#0d3639',
-                marginLeft: '20px',
-                marginTop: '30%',
-              }}
-            >
-              GET YOUR APP TODAY
-            </p>
-            <a href='https://github.com/Muhammad-Bilal-7896/Android-Quiz-App'>
-              <img src='' alt='app' />
-            </a>
-          </div> */}
         </div>
       </div>
 
-      <div id='links-footer'>
-        <ul>
+      <div id='links-footer' className='row'>
+        <ul className='col'>
           <li
             style={{
               fontWeight: 'bold',
@@ -54,22 +40,7 @@ const Footer = () => {
           <li>Mobile Phones</li>
         </ul>
 
-        <ul>
-          <li
-            style={{
-              fontWeight: 'bold',
-              fontSize: '15px',
-              color: 'rgb(0, 47, 82)',
-            }}
-          >
-            Trending Searches
-          </li>
-          <li>Bikes</li>
-          <li>Watches</li>
-          <li>Books</li>
-          <li>Dogs</li>
-        </ul>
-        <ul>
+        <ul className='col'>
           <li
             style={{
               fontWeight: 'bold',
@@ -100,7 +71,8 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <ul>
+
+        <ul className='col'>
           <li
             style={{
               fontWeight: 'bold',
@@ -108,54 +80,51 @@ const Footer = () => {
               color: 'rgb(0, 47, 82)',
             }}
           >
-            OLX
+            FOLLOW US
           </li>
-          <li>Help</li>
-          <li>Sitemap</li>
-          <li>Legal and Privacy Information</li>
+          <li
+            style={{
+              color: 'rgb(0, 47, 82)',
+              textDecoration: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            <FaFacebook /> Facebook
+          </li>
+          <li
+            style={{
+              color: 'rgb(0, 47, 82)',
+              textDecoration: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            <AiFillGithub /> Github
+          </li>
+          <li
+            style={{
+              color: 'rgb(0, 47, 82)',
+              textDecoration: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            <AiFillYoutube /> YouTube
+          </li>
         </ul>
-        <div style={{ marginLeft: '4%' }}>
-          <p style={{ color: 'rgb(0, 47, 82)' }}>FOLLOW US</p>
-          <div style={{ display: 'flex', fontSize: '20px' }}>
-            <div style={{ color: 'rgb(0, 47, 82)' }}>
-              <Link to=''>
-                {' '}
-                <FaFacebook />
-              </Link>{' '}
-            </div>
-            <div style={{ marginLeft: '15px', color: 'rgb(0, 47, 82)' }}>
-              <Link>
-                <AiFillTwitterCircle />
-              </Link>{' '}
-            </div>
-            <div style={{ marginLeft: '15px', color: 'rgb(0, 47, 82)' }}>
-              <Link>
-                <AiFillYoutube />
-              </Link>
-            </div>
-            <div style={{ marginLeft: '15px', color: 'rgb(0, 47, 82)' }}>
-              <Link>
-                {' '}
-                <ImLinkedin />
-              </Link>{' '}
-            </div>
-          </div>
-        </div>
       </div>
       <div
         className='text-light d-flex align-items-center justify-content-between'
         style={{
           backgroundColor: '#002f34',
-          height: '50px',
+          minHeight: '50px',
           lineHeight: '50px',
         }}
       >
-        <span style={{ marginLeft: '5%' }}>
+        <div style={{ marginLeft: '5%' }}>
           Other Countries Pakistan - South Africa - Indonesia
-        </span>
-        <span style={{ marginRight: '5%' }}>
+        </div>
+        <div style={{ marginRight: '5%' }}>
           All rights reserved &copy; 2023 Aryan & team
-        </span>
+        </div>
       </div>
     </div>
   );

@@ -21,12 +21,12 @@ const HomePage = () => {
 
   useEffect(() => {
     firebase.listAllProducts().then((doc) => {
+      // eslint-disable-next-line
       return setProduct(doc.docs), setFilterProduct(doc.docs);
     });
   }, [firebase]);
 
-  const checkedInput = (e) => {
-    setTypeProduct(e);
+  const checkedInput = () => {
     if (typeProduct !== 'All') {
       setFilterProduct(
         product.filter((prod) => {
@@ -46,31 +46,30 @@ const HomePage = () => {
       <hr />
       <div className='container-fluid'>
         <h1 className='text-center my-2'>Products</h1>
-        <div className='container-fluid my-3 d-flex justify-content-center align-item-center'>
-          <div className='btn-group'>
-            {productType.map((e, index) => (
-              <div key={index} onClick={() => checkedInput(e)}>
-                <input
-                  type='radio'
-                  className='btn-check'
-                  name='options'
-                  id={e}
-                  autoComplete='off'
-                />
-                <label className='btn btn-outline-primary' htmlFor={e}>
-                  {e}
-                </label>
-              </div>
-            ))}
-          </div>
+        <div className='container-fluid my-3 d-flex justify-content-center align-item-center row'>
+          {productType.map((e, index) => (
+            <input
+              type='submit'
+              className={`btn col mb-2 mx-1 ${
+                typeProduct === e ? 'btn-primary' : 'btn-outline-primary'
+              }`}
+              key={index}
+              onClick={() => {
+                setTypeProduct(e);
+                checkedInput();
+              }}
+              value={e}
+            />
+          ))}
         </div>
         {filterProduct.length === 0 ? (
-          'No Product under this category'
+          <h1 className='m-3 text-center'>No Product under this category</h1>
         ) : (
           <div className='row'>
             {filterProduct.map((e, index) => (
               <div
-                className='col-lg-4 col-md-5 col-sm-6 mb-4 ml-auto expand-card'
+                // col-lg-4 col-md-5 col-sm-6
+                className='col mb-4 ml-auto expand-card'
                 key={index}
               >
                 <ProductsComponent id={e.id} {...e.data()} />

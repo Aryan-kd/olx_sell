@@ -39,11 +39,11 @@ const NavbarComponent = () => {
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link className='nav-link' to={'/nearme'}>
                 NearMe
               </Link>
-            </li>
+            </li> */}
           </ul>
           <ul className='navbar-nav ms-auto'>
             {firebase.isLoggedIn === true ? (

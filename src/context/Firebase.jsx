@@ -38,7 +38,6 @@ const googleProvider = new GoogleAuthProvider();
 const storage = getStorage(firebaseApp);
 export const FirebaseProvider = (props) => {
   const [user, setUser] = useState(null);
-  console.log(user);
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
