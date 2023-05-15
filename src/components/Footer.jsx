@@ -154,7 +154,7 @@ const Footer = () => {
           Other Countries Pakistan - South Africa - Indonesia
         </span>
         <span style={{ marginRight: '5%' }}>
-          Other Countries Pakistan - South Africa - Indonesia
+          All rights reserved &copy; 2023 Aryan & team
         </span>
       </div>
     </div>
